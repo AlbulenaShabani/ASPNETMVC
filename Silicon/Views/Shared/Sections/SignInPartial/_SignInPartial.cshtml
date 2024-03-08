@@ -1,0 +1,59 @@
+﻿@using Silicon.ViewModel
+@model SignInViewModel
+
+            <div class="signIn">
+                <form method="post" asp-controller="Auth" asp-action="SignIn" novalidate>
+                <div class="Welcomebacktext">
+                    <h1><strong>
+                    Welcome Back
+                    </strong></h1>
+
+                    <p>
+                         Don’t have an account yet? 
+
+                        <a asp-controller="Auth" asp-action="SignUp"> Sign up here.</a>
+                    </p>
+
+
+                </div>
+
+                <div class="Email input-validation-error">
+
+                    <p><strong>Email</strong></p>
+                    <input asp-for=Form.Email placeholder="Enter your email address">
+
+
+                </div>
+
+                <div class="password input-validation-error">
+
+                    <p><strong>
+                        Password
+                    </strong></p>
+
+                    <input asp-for=Form.Password placeholder= "**********"> 
+
+
+                </div>
+
+                <div class="checkbox">
+
+                    <input asp-for=Form.RememberMe type="checkbox">
+                    <label asp-for=Form.RememberMe >Remember me </label>
+
+                </div>
+
+                <div class="signinbutton">
+                    <button type="Submit">
+                        Sign in
+                    </button>
+                </div>
+
+                <div class="forgotpassword">
+                    <a href="#">
+                        Forgot your password?
+                    </a>
+                </div>
+                </form>
+
+            </div>
