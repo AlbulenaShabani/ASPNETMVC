@@ -423,3 +423,438 @@ footer .copyright .undertext {
   display: flex;
   justify-content: center;
 }
+
+.Wrapper {
+  height: 100vh;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+}
+
+body {
+  overflow-x: hidden;
+  width: 1920px;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+Header {
+  display: flex;
+  align-items: center;
+  margin-left: 300px;
+  margin-top: 15px;
+}
+Header .options {
+  margin-left: 50px;
+  display: flex;
+  gap: 20px;
+}
+Header .options a:hover {
+  text-decoration-line: underline;
+}
+Header .Switchbutton {
+  display: flex;
+  gap: 20px;
+  margin-left: 430px;
+  margin-top: 15px;
+}
+Header .Switchbutton p {
+  font-size: 15px;
+  margin-top: 5px;
+}
+Header .Switchbutton .switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+Header .Switchbutton .switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+Header .Switchbutton .slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+Header .Switchbutton .slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+Header .Switchbutton input:checked + .slider {
+  background-color: #2196F3;
+}
+Header .Switchbutton input:focus + .slider {
+  box-shadow: 0 0 1px #2196F3;
+}
+Header .Switchbutton input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+Header .Switchbutton .slider.round {
+  border-radius: 34px;
+}
+Header .Switchbutton .slider.round:before {
+  border-radius: 50%;
+}
+Header .signButtons {
+  display: flex;
+  align-items: center;
+  margin-left: 50px;
+  gap: 15px;
+}
+Header .signButtons .signIn a {
+  background-color: #eff2fc;
+  border: 1px solid;
+  border-color: #eff2fc;
+  color: black;
+  border-radius: 10px;
+  padding: 10px 30px;
+  font-size: 15px;
+}
+Header .signButtons .signIn a:hover {
+  background-color: #6366f1;
+  color: #eff2fc;
+}
+Header .signButtons .signIn a i {
+  margin-right: 10px;
+}
+Header .signButtons .signUp a {
+  background-color: #6366f1;
+  border: 1px solid;
+  border-color: #6366f1;
+  color: white;
+  border-radius: 10px;
+  padding: 10px 30px;
+  font-size: 15px;
+}
+Header .signButtons .signUp a:hover {
+  background-color: #eff2fc;
+  border-color: #eff2fc;
+  color: black;
+}
+Header .signButtons .signUp a i {
+  margin-right: 10px;
+}
+
+main .middlebox {
+  display: grid;
+  justify-content: center;
+}
+main .middlebox .Createaccount {
+  margin-top: 150px;
+}
+main .middlebox .Createaccount p {
+  margin-top: 30px;
+}
+main .middlebox .Createaccount p a {
+  color: #6366f1;
+}
+main .middlebox .firstlastname {
+  display: flex;
+  gap: 25px;
+  margin-top: 40px;
+}
+main .middlebox .firstlastname .input-validation-error {
+  background-color: #f8dcdc;
+  border: 1px solid;
+  border-color: red;
+}
+main .middlebox .firstlastname input {
+  border: 1px solid;
+  padding: 10px 25px;
+  border-radius: 10px;
+}
+main .middlebox .emailadress {
+  margin-top: 20px;
+}
+main .middlebox .emailadress .input-validation-error {
+  background-color: #f8dcdc;
+  border: 1px solid;
+  border-color: red;
+}
+main .middlebox .emailadress input {
+  border: 1px solid;
+  padding: 10px 155px;
+  border-radius: 10px;
+}
+main .middlebox .password {
+  margin-top: 20px;
+}
+main .middlebox .password .input-validation-error {
+  background-color: #f8dcdc;
+  border: 1px solid;
+  border-color: red;
+}
+main .middlebox .password input {
+  border: 1px solid;
+  padding: 10px 155px;
+  border-radius: 10px;
+}
+main .middlebox .confirmpassword {
+  margin-top: 20px;
+}
+main .middlebox .confirmpassword .input-validation-error {
+  background-color: #f8dcdc;
+  border: 1px solid;
+  border-color: red;
+}
+main .middlebox .confirmpassword input {
+  border: 1px solid;
+  padding: 10px 155px;
+  border-radius: 10px;
+}
+main .middlebox .checkbox {
+  margin-top: 20px;
+}
+main .middlebox .checkbox a {
+  color: #6366f1;
+}
+main .middlebox .signupbutton {
+  margin-top: 25px;
+}
+main .middlebox .signupbutton button {
+  border: 1px solid;
+  padding: 15px 220px;
+  border-radius: 10px;
+  background-color: #6366f1;
+  color: white;
+}
+main .middlebox .signupbutton button:hover {
+  background-color: #eff2fc;
+  color: black;
+}
+
+footer {
+  height: 204px;
+  width: 1920px;
+  background-color: white;
+  margin-top: 20px;
+}
+footer .socialmedia {
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+  gap: 15px;
+}
+footer .socialmedia a {
+  background-color: #eff2fc;
+  padding: 20px;
+  border-radius: 10px;
+}
+footer .socialmedia a:hover {
+  background-color: #6366f1;
+}
+footer .copyright {
+  display: grid;
+  margin-top: 40px;
+  justify-content: center;
+}
+footer .copyright .undertext {
+  display: flex;
+  justify-content: center;
+}
+
+.Wrapper {
+  height: 100vh;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+}
+
+body {
+  overflow-x: hidden;
+  width: 1920px;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  margin-left: 300px;
+  margin-top: 15px;
+}
+header .options {
+  margin-left: 50px;
+  display: flex;
+  gap: 20px;
+}
+header .options a:hover {
+  text-decoration-line: underline;
+}
+header .Switchbutton {
+  display: flex;
+  gap: 20px;
+  margin-left: 430px;
+  margin-top: 15px;
+}
+header .Switchbutton p {
+  font-size: 15px;
+  margin-top: 5px;
+}
+header .Switchbutton .switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+header .Switchbutton .switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+header .Switchbutton .slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+header .Switchbutton .slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+header .Switchbutton input:checked + .slider {
+  background-color: #2196F3;
+}
+header .Switchbutton input:focus + .slider {
+  box-shadow: 0 0 1px #2196F3;
+}
+header .Switchbutton input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+header .Switchbutton .slider.round {
+  border-radius: 34px;
+}
+header .Switchbutton .slider.round:before {
+  border-radius: 50%;
+}
+
+main .signIn .Welcomebacktext {
+  display: grid;
+  justify-content: center;
+  margin-top: 180px;
+}
+main .signIn .Welcomebacktext h1 {
+  font-size: 52px;
+}
+main .signIn .Welcomebacktext p {
+  color: rgb(102, 98, 98);
+  font-size: 20px;
+}
+main .signIn .Welcomebacktext p a {
+  color: #6366f1;
+}
+main .signIn .Welcomebacktext p a:hover {
+  text-decoration: underline;
+}
+main .signIn .Email, main .signIn .password {
+  margin-left: 780px;
+  margin-top: 40px;
+}
+main .signIn .Email .input-validation-error, main .signIn .password .input-validation-error {
+  background-color: #f8dcdc;
+  border: 1px solid;
+  border-color: red;
+}
+main .signIn .Email input, main .signIn .password input {
+  border: 1px solid;
+  padding: 10px 100px;
+  border-radius: 10px;
+}
+main .signIn .checkbox {
+  margin-left: 780px;
+  margin-top: 20px;
+}
+main .signIn signinbutton a {
+  margin-left: 780px;
+}
+main .signIn .signinbutton {
+  margin-left: 780px;
+  margin-top: 40px;
+}
+main .signIn .signinbutton button {
+  background-color: #6366f1;
+  border: 1px solid;
+  padding: 10px 170px;
+  border-radius: 10px;
+  color: white;
+}
+main .signIn .signinbutton button:hover {
+  background-color: #eff2fc;
+  color: black;
+}
+main .signIn .forgotpassword {
+  margin-top: 30px;
+  margin-bottom: 180px;
+}
+main .signIn .forgotpassword a {
+  display: grid;
+  justify-content: center;
+  color: #6366f1;
+}
+main .signIn .forgotpassword a:hover {
+  text-decoration: underline;
+}
+
+footer {
+  height: 204px;
+  width: 1920px;
+  background-color: white;
+}
+footer .socialmedia {
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+  gap: 15px;
+}
+footer .socialmedia a {
+  background-color: #eff2fc;
+  padding: 20px;
+  border-radius: 10px;
+}
+footer .socialmedia a:hover {
+  background-color: #6366f1;
+}
+footer .copyright {
+  display: grid;
+  margin-top: 40px;
+  justify-content: center;
+}
+footer .copyright .undertext {
+  display: flex;
+  justify-content: center;
+}

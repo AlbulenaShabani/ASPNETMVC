@@ -1,0 +1,84 @@
+﻿@using Silicon.ViewModel
+@model SignUpViewModel
+
+
+
+ <div class="middlebox">
+     <form method="post" asp-controller="Auth" asp-action="SignUp" novalidate>
+        <div class="Createaccount">
+
+            <h1>
+                <strong>
+                    Create Account
+                </strong>
+            </h1>
+
+            <p>
+                Already have an account?
+
+                <a asp-controller="Auth" asp-action="SignIn">  Sign in here.</a>
+            </p>
+        </div>
+
+
+        <div class="firstlastname input-validation-error">
+            <div class="firstname">
+                <p><strong>First name</strong></p>
+                <input asp-for=Form.FirstName placeholder="Enter your first name">
+            </div>
+
+            <div class="lastname">
+                <p><strong>Last name</strong></p>
+                <input asp-for=Form.LastName placeholder="Enter your last name">
+            </div>
+
+        </div>
+
+        <div class="emailadress input-validation-error">
+            <p>
+                <strong>
+                    Email address
+                </strong>
+            </p>
+            <input asp-for=Form.Email placeholder="Enter your email address">
+        </div>
+
+        <div class="password input-validation-error">
+            <p>
+                <strong>
+                    Password
+                </strong>
+            </p>
+            <input asp-for=Form.Password placeholder="********">
+
+        </div>
+
+        <div class="confirmpassword input-validation-error">
+            <p>
+                <strong>
+                    Confirmpassword
+                </strong>
+            </p>
+            <input asp-for=Form.ConfirmPassword placeholder="********">
+
+
+        </div>
+        <div class="checkbox">
+
+            <input asp-for=Form.TermsAndConditions>
+            <label asp-for="Form.TermsAndConditions"> I agree to the</label>
+
+            <a href="">
+                Terms & Conditions.
+            </a>
+
+        </div>
+
+        <div class="signupbutton">
+            <button type="submit">
+                Sign up
+            </button>
+        </div>
+
+    </form>
+</div>
