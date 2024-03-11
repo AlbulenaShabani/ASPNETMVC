@@ -43,7 +43,7 @@ public class AuthController : Controller
         {
             return View(viewModel);
         }
-        return RedirectToAction("Product", "Courses");
+        return RedirectToAction("Index", "Courses");
 
 
     }
