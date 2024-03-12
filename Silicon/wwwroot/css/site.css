@@ -1311,6 +1311,11 @@ main .profile .accountDetailsMain .firstNameLastname {
 main .profile .accountDetailsMain .firstNameLastname .firstName input, main .profile .accountDetailsMain .firstNameLastname .lastName input {
   padding: 5px 30px;
 }
+main .profile .accountDetailsMain .firstNameLastname .firstName .input-validation-error, main .profile .accountDetailsMain .firstNameLastname .lastName .input-validation-error {
+  background-color: #f8dcdc;
+  border: 1px solid;
+  border-color: red;
+}
 main .profile .accountDetailsMain .emailAddressPhoneNumber {
   display: flex;
   gap: 40px;
@@ -1318,6 +1323,11 @@ main .profile .accountDetailsMain .emailAddressPhoneNumber {
 }
 main .profile .accountDetailsMain .emailAddressPhoneNumber .emailAddress input, main .profile .accountDetailsMain .emailAddressPhoneNumber .phoneNumber input {
   padding: 5px 30px;
+}
+main .profile .accountDetailsMain .emailAddressPhoneNumber .emailAddress .input-validation-error, main .profile .accountDetailsMain .emailAddressPhoneNumber .phoneNumber .input-validation-error {
+  background-color: #f8dcdc;
+  border: 1px solid;
+  border-color: red;
 }
 main .profile .accountDetailsMain .accountDetailsBio {
   margin-top: 40px;
@@ -1330,7 +1340,7 @@ main .profile .accountDetailsMain .accountDetailsButtons {
   margin-top: 30px;
   gap: 20px;
 }
-main .profile .accountDetailsMain .accountDetailsButtons .cancel a {
+main .profile .accountDetailsMain .accountDetailsButtons .cancel button {
   background-color: #EFF2FC;
   border: 1px solid;
   border-color: #EFF2FC;
@@ -1338,13 +1348,13 @@ main .profile .accountDetailsMain .accountDetailsButtons .cancel a {
   padding: 10px 25px;
   color: black;
 }
-main .profile .accountDetailsMain .accountDetailsButtons .cancel a:hover {
+main .profile .accountDetailsMain .accountDetailsButtons .cancel button:hover {
   background-color: #6366F1;
   border: 1px solid;
   border-color: #6366F1;
   color: white;
 }
-main .profile .accountDetailsMain .accountDetailsButtons .saveChanges a {
+main .profile .accountDetailsMain .accountDetailsButtons .saveChanges button {
   background-color: #6366F1;
   border: 1px solid;
   border-color: #6366F1;
@@ -1352,7 +1362,7 @@ main .profile .accountDetailsMain .accountDetailsButtons .saveChanges a {
   padding: 10px 25px;
   color: white;
 }
-main .profile .accountDetailsMain .accountDetailsButtons .saveChanges a:hover {
+main .profile .accountDetailsMain .accountDetailsButtons .saveChanges button:hover {
   background-color: #EFF2FC;
   border: 1px solid;
   border-color: #EFF2FC;
@@ -1390,7 +1400,7 @@ main .profile .accountDetailsMain .postalCodeCityButtons {
   margin-top: 30px;
   gap: 20px;
 }
-main .profile .accountDetailsMain .postalCodeCityButtons .cancel2 a {
+main .profile .accountDetailsMain .postalCodeCityButtons .cancel2 button {
   background-color: #EFF2FC;
   border: 1px solid;
   border-color: #EFF2FC;
@@ -1398,13 +1408,13 @@ main .profile .accountDetailsMain .postalCodeCityButtons .cancel2 a {
   padding: 10px 25px;
   color: black;
 }
-main .profile .accountDetailsMain .postalCodeCityButtons .cancel2 a:hover {
+main .profile .accountDetailsMain .postalCodeCityButtons .cancel2 button:hover {
   background-color: #6366F1;
   border: 1px solid;
   border-color: #6366F1;
   color: white;
 }
-main .profile .accountDetailsMain .postalCodeCityButtons .saveChanges2 a {
+main .profile .accountDetailsMain .postalCodeCityButtons .saveChanges2 button {
   background-color: #6366F1;
   border: 1px solid;
   border-color: #6366F1;
@@ -1412,7 +1422,7 @@ main .profile .accountDetailsMain .postalCodeCityButtons .saveChanges2 a {
   padding: 10px 25px;
   color: white;
 }
-main .profile .accountDetailsMain .postalCodeCityButtons .saveChanges2 a:hover {
+main .profile .accountDetailsMain .postalCodeCityButtons .saveChanges2 button:hover {
   background-color: #EFF2FC;
   border: 1px solid;
   border-color: #EFF2FC;
@@ -1423,7 +1433,7 @@ footer {
   height: 204px;
   width: 1920px;
   background-color: white;
-  margin-top: 20px;
+  margin-top: 60px;
 }
 footer .socialmedia {
   display: flex;
