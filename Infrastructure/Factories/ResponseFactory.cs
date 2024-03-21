@@ -1,56 +1,57 @@
 ﻿
+
 using Infrastructure.Models;
 
 namespace Infrastructure.Factories;
 
-public class ResponsFactory
+public class ResponseFactory
 {
-	public static ResponsResult Ok()
+	public static ResponseResult Ok()
 	{
-		return new ResponsResult
+		return new ResponseResult
 		{
 			Message = "Succeeded",
 			StatusCode = StatusCode.OK
 		};
 	}
-	public static ResponsResult Ok(string? message = null)
+	public static ResponseResult Ok(string? message = null)
 	{
-		return new ResponsResult
+		return new ResponseResult
 		{
 			Message = "Succeeded",
 			StatusCode = StatusCode.OK
 		};
 	}
-	public static ResponsResult Ok(object obj, string? message = null)
+	public static ResponseResult Ok(object obj, string? message = null)
 	{
-		return new ResponsResult
+		return new ResponseResult
 		{
 			ContentReult = obj,
 			Message = "Succeeded",
 			StatusCode = StatusCode.OK
 		};
 	}
-	public static ResponsResult Error( string? message = null)
+	public static ResponseResult Error(string? message = null)
 	{
-		return new ResponsResult
+		return new ResponseResult
 		{
 			Message = message ?? "Failed",
 			StatusCode = StatusCode.ERROR
 		};
 	}
 
-	public static ResponsResult NotFound( string? message = null)
+	public static ResponseResult NotFound(string? message = null)
 	{
-		return new ResponsResult
+		return new ResponseResult
 		{
 			Message = message ?? "Not Found",
 			StatusCode = StatusCode.NOT_FOUND
 		};
 	}
 
-	public static ResponsResult Exists ( string? message = null)
+	public static ResponseResult Exists(string? message = null)
 	{
-		return new ResponsResult
+		return new ResponseResult
 		{
 			Message = message ?? "Already Exists",
 			StatusCode = StatusCode.EXISTS

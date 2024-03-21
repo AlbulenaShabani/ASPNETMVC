@@ -13,13 +13,13 @@ public class Repo<TEntity>(DataContext context) where TEntity : class
 	private readonly DataContext _context = context;
 
 
-	public virtual async Task<ResponsResult> CreateOneAsync (TEntity entity)
+	public virtual async Task<ResponseResult> CreateOneAsync (TEntity entity)
 	{
 		try
 		{
 			_context.Set<TEntity>().Add(entity);
 			await _context.SaveChangesAsync();
-			return new ResponsResult
+			return new ResponseResult
 			{
 				ContentReult = entity,
 				Message = "Created succesfully",
@@ -29,41 +29,41 @@ public class Repo<TEntity>(DataContext context) where TEntity : class
 		}
 		catch (Exception ex) 
 		{
-			return ResponsFactory.Error(ex.Message);
+			return ResponseFactory.Error(ex.Message);
 		}
 	}
 
-	public virtual async Task<ResponsResult> GetAllAsync()
+	public virtual async Task<ResponseResult> GetAllAsync()
 	{
 		try
 		{
 			IEnumerable<TEntity> result = await _context.Set<TEntity>().ToListAsync();
-			return ResponsFactory.Ok(result);
+			return ResponseFactory.Ok(result);
 			
 		}
 		catch (Exception ex)
 		{
-			return ResponsFactory.Error(ex.Message);
+			return ResponseFactory.Error(ex.Message);
 		}
 	}
 
-	public virtual async Task<ResponsResult> GetOneAsync(Expression<Func<TEntity, bool>> predicate)
+	public virtual async Task<ResponseResult> GetOneAsync(Expression<Func<TEntity, bool>> predicate)
 	{
 		try
 		{
 			var result = await _context.Set<TEntity>().FirstOrDefaultAsync(predicate);
 			if (result == null)
-				return ResponsFactory.NotFound();
-			return ResponsFactory.Ok(result);
+				return ResponseFactory.NotFound();
+			return ResponseFactory.Ok(result);
 
 		}
 		catch (Exception ex)
 		{
-			return ResponsFactory.Error(ex.Message);
+			return ResponseFactory.Error(ex.Message);
 		}
 	}
 
-	public virtual async Task<ResponsResult> UpdateOneAsync(Expression<Func<TEntity, bool>> predicate, TEntity UpdatedEntity)
+	public virtual async Task<ResponseResult> UpdateOneAsync(Expression<Func<TEntity, bool>> predicate, TEntity UpdatedEntity)
 	{
 		try
 		{
@@ -72,18 +72,18 @@ public class Repo<TEntity>(DataContext context) where TEntity : class
 			{
 				_context.Entry(result).CurrentValues.SetValues(UpdatedEntity);
 				await _context.SaveChangesAsync();
-					return ResponsFactory.Ok(result);
+					return ResponseFactory.Ok(result);
 			}
-				return ResponsFactory.NotFound();
+				return ResponseFactory.NotFound();
 			
 
 		}
 		catch (Exception ex)
 		{
-			return ResponsFactory.Error(ex.Message);
+			return ResponseFactory.Error(ex.Message);
 		}
 	}
-	public virtual async Task<ResponsResult> DeleteOneAsync(Expression<Func<TEntity, bool>> predicate)
+	public virtual async Task<ResponseResult> DeleteOneAsync(Expression<Func<TEntity, bool>> predicate)
 	{
 		try
 		{
@@ -92,19 +92,19 @@ public class Repo<TEntity>(DataContext context) where TEntity : class
 			{
 				_context.Set<TEntity>().Remove(result);
 				await _context.SaveChangesAsync();
-				return ResponsFactory.Ok(" Successfully Deleted");
+				return ResponseFactory.Ok(" Successfully Deleted");
 			}
-			return ResponsFactory.NotFound();
+			return ResponseFactory.NotFound();
 
 
 		}
 		catch (Exception ex)
 		{
-			return ResponsFactory.Error(ex.Message);
+			return ResponseFactory.Error(ex.Message);
 		}
 	}
 
-	public virtual async Task<ResponsResult> AllreadyExistsAsync(Expression<Func<TEntity, bool>> predicate)
+	public virtual async Task<ResponseResult> AllreadyExistsAsync(Expression<Func<TEntity, bool>> predicate)
 	{
 		try
 		{
@@ -112,15 +112,15 @@ public class Repo<TEntity>(DataContext context) where TEntity : class
 			if (result)
 			
 				
-				return ResponsFactory.Exists();
+				return ResponseFactory.Exists();
 			
-			return ResponsFactory.NotFound();
+			return ResponseFactory.NotFound();
 
 
 		}
 		catch (Exception ex)
 		{
-			return ResponsFactory.Error(ex.Message);
+			return ResponseFactory.Error(ex.Message);
 		}
 	}
 }

@@ -1,27 +1,31 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Infrastructure.ServSices;
+using Microsoft.AspNetCore.Mvc;
 using Silicon.ViewModel;
 
 namespace Silicon.Controllers;
 
-public class AuthController : Controller
+public class AuthController(UserService userService) : Controller
 {
-    [HttpGet]
+    private readonly UserService _userService = userService;
+
+
+	[HttpGet]
     [Route("/SignUp")]
-    public IActionResult SignUp()
-    {
-        ViewData["Title"] = "SignUp";
-        return View();
-    }
+    public IActionResult SignUp() => View(new SignUpViewModel());
+
 
     [HttpPost]
     [Route("/SignUp")]
-    public IActionResult SignUp(SignUpViewModel viewModel)
+    public async Task<IActionResult> SignUp(SignUpViewModel viewModel)
     {
         if (!ModelState.IsValid)
         {
-            return View(viewModel);
+            var result = await _userService.CreateUserAsync(viewModel.Form);
+            if (result.StatusCode == Infrastructure.Models.StatusCode.OK)
+            return RedirectToAction("Index", "Home");
         }
-        return RedirectToAction("Index", "Home");
+
+        return View(viewModel);
     }
 
 
